@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace RayTracerChallenge.Types
 {
@@ -55,12 +56,16 @@ namespace RayTracerChallenge.Types
 				left.W * right.W);
 		}
 
-		/*
-		public static float Cross(Tuple left, Tuple right)
+		
+		public static Tuple Cross(Tuple left, Tuple right)
 		{
-
+			return Vector(
+					left.Y * right.Z - left.Z * right.Y,
+					left.Z * right.X - left.X * right.Z,
+					left.X * right.Y - left.Y * right.X
+				);
 		}
-		*/
+		
 
 		public static Tuple operator +(Tuple left, Tuple right)
 		{

@@ -304,5 +304,20 @@ namespace RayTracerChallengeTest
 
 			Assert.AreEqual(20.0f, Tuple.Dot(vectorOne, vectorTwo));
 		}
+
+		[TestMethod]
+		public void Cross_Vectors()
+		{
+			var vectorOne = Tuple.Vector(1.0f, 2.0f, 3.0f);
+			var vectorTwo = Tuple.Vector(2.0f, 3.0f, 4.0f);
+
+			var expectedVectorOne = Tuple.Vector(-1.0f, 2.0f, -1.0f);
+			var crossedVectorOne = Tuple.Cross(vectorOne, vectorTwo);
+			var expectedVectorTwo = Tuple.Vector(1.0f, -2.0f, 1.0f);
+			var crossedVectorTwo = Tuple.Cross(vectorTwo, vectorOne);
+
+			Assert.AreEqual(expectedVectorOne, crossedVectorOne);
+			Assert.AreEqual(expectedVectorTwo, crossedVectorTwo);
+		}
 	}
 }
