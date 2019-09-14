@@ -12,6 +12,13 @@ namespace RayTracerChallenge
 		public float Green { get; set; }
 		public float Blue { get; set; }
 
+		public Color()
+		{
+			Red = 0.0f;
+			Green = 0.0f;
+			Blue = 0.0f;
+		}
+
 		public Color(float red, float green, float blue)
 		{
 			Red = red;
@@ -57,9 +64,7 @@ namespace RayTracerChallenge
 
 		public static bool operator ==(Color left, Color right)
 		{
-			return (Math.Abs(left.Red - right.Red) < Epsilon) &&
-			       (Math.Abs(left.Green - right.Green) < Epsilon) &&
-			       (Math.Abs(left.Blue - right.Blue) < Epsilon);
+			return left.Equals(right);
 		}
 
 		public static bool operator !=(Color left, Color right)
@@ -72,7 +77,10 @@ namespace RayTracerChallenge
 		{
 			if (ReferenceEquals(null, other)) return false;
 			if (ReferenceEquals(this, other)) return true;
-			return this == other;
+
+			return (Math.Abs(Red - other.Red) < Epsilon) &&
+			       (Math.Abs(Green - other.Green) < Epsilon) &&
+			       (Math.Abs(Blue - other.Blue) < Epsilon);
 		}
 
 		public override bool Equals(object obj)

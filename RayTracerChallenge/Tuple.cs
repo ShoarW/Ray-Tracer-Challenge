@@ -111,10 +111,7 @@ namespace RayTracerChallenge
 
 		public static bool operator ==(Tuple left, Tuple right)
 		{
-			return (Math.Abs(left.X - right.X) < Epsilon) &&
-			       (Math.Abs(left.Y - right.Y) < Epsilon) &&
-			       (Math.Abs(left.Z - right.Z) < Epsilon) &&
-			       (Math.Abs(left.W - right.W) < Epsilon);
+			return left.Equals(right);
 		}
 
 		public static Tuple operator !(Tuple tuple)
