@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Runtime.InteropServices.WindowsRuntime;
 
-namespace RayTracerChallenge.Types
+namespace RayTracerChallenge
 {
 	public class Tuple : IEquatable<Tuple>
 	{
-		private static float Epsilon = 0.00001f;
+		private const float Epsilon = 0.00001f;
 		public float X { get; set; }
 		public float Y { get; set; }
 		public float Z { get; set; }
@@ -46,6 +45,7 @@ namespace RayTracerChallenge.Types
 		{
 			return new Tuple(x, y, z, 0.0f);
 		}
+
 
 		public static float Dot(Tuple left, Tuple right)
 		{
@@ -160,6 +160,18 @@ namespace RayTracerChallenge.Types
 				Y / magnitude,
 				Z / magnitude,
 				W / magnitude);
+		}
+
+		public override int GetHashCode()
+		{
+			unchecked
+			{
+				var hashCode = X.GetHashCode();
+				hashCode = (hashCode * 397) ^ Y.GetHashCode();
+				hashCode = (hashCode * 397) ^ Z.GetHashCode();
+				hashCode = (hashCode * 397) ^ W.GetHashCode();
+				return hashCode;
+			}
 		}
 
 	}

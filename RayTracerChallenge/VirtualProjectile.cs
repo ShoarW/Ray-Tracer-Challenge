@@ -1,13 +1,11 @@
-﻿using RayTracerChallenge.Types;
-
-namespace RayTracerChallenge
+﻿namespace RayTracerChallenge
 {
 	public class Projectile
 	{
 		// Point
-		public Tuple Position { get; private set; }
+		public Tuple Position { get; }
 		// Vector
-		public Tuple Velocity { get; private set; }
+		public Tuple Velocity { get; }
 
 		public Projectile(Tuple position, Tuple velocity)
 		{
@@ -19,9 +17,9 @@ namespace RayTracerChallenge
 	public class Environment
 	{
 		// Vector
-		public Tuple Gravity { get; private set; }
+		public Tuple Gravity { get; }
 		// Vector
-		public Tuple Wind { get; private set; }
+		public Tuple Wind { get; }
 
 		public Environment(Tuple gravity, Tuple wind)
 		{

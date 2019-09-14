@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tuple = RayTracerChallenge.Types.Tuple;
+using Tuple = RayTracerChallenge.Tuple;
 
 
 namespace RayTracerChallengeTest
